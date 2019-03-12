@@ -1,0 +1,183 @@
+1)
+
+> help(vector)
+> ?vector
+> 
+> help.start()
+
+
+2)
+
+> x<-c(22,5,12,36)
+> x
+[1] 22  5 12 36
+> x<-c(x[1:3],222,x[4])
+> x
+[1]  22   5  12 222  36
+
+
+3)
+
+> x<-c(x[1:3],222,x[4])
+> length(x)
+[1] 5
+
+
+4)
+
+> y<-vector(length=2)
+> y[1]<-1
+> y[2]<-2
+> y[3]<-3
+> y
+[1] 1 2 3
+
+5)
+
+> a<-c(1,2,4)
+> b<-c(5,0,-1)
+> a+b
+[1] 6 2 3
+
+> b<-c(5,0,-1,4)
+> a+b
+[1] 6 2 3 5
+
+
+Warning message:
+In a + b : longer object length is not a multiple of shorter object length
+
+
+> b<-c(5,0,-1)
+> a*b
+[1]  5  0 -4
+
+6)
+
+> y<-c(2,4,5,12)
+> y[1:3]
+[1] 2 4 5
+> 
+> y[c(1:3)]
+[1] 2 4 5
+
+7)
+
+> poker_vector<-c(140,-50,20,-120,240)
+> roulette_vector<-c(-24,-50,100,-350,10)
+> days_vector<-c("MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY")
+
+8)
+
+> names(poker_vector)<-days_vector
+> poker_vector
+   MONDAY   TUESDAY WEDNESDAY  THURSDAY    FRIDAY 
+      140       -50        20      -120       240
+
+9)
+
+> names(roulette_vector)<-days_vector
+> roulette_vector
+   MONDAY   TUESDAY WEDNESDAY  THURSDAY    FRIDAY 
+      -24       -50       100      -350        10
+
+
+
+
+
+
+10)
+
+> gamestotal<-poker_vector+roulette_vector
+> gamestotal
+   MONDAY   TUESDAY WEDNESDAY  THURSDAY    FRIDAY 
+      116      -100       120      -470       250
+
+11)
+
+> roulette_vector<-c(-24,-50,100,-350,10)
+> poker_vector<-c(140,-50,20,-120,240)
+> 
+> sum(poker_vector)
+[1] 230
+> 
+> sum(roulette_vector)
+[1] -314
+
+12)
+
+> total_poker<-sum(poker_vector)
+> total_roulette<-sum(roulette_vector)
+> total_poker>total_roulette
+[1] TRUE
+
+13)
+
+> poker_vector>roulette_vector
+   MONDAY   TUESDAY WEDNESDAY  THURSDAY    FRIDAY 
+     TRUE     FALSE     FALSE      TRUE      TRUE 
+
+
+> poker_wed<-poker_vector[3]
+> poker_wed
+WEDNESDAY 
+       20
+
+14)
+
+> poker_twt<-poker_vector[c(2,3,4)]
+> poker_twt
+  TUESDAY WEDNESDAY  THURSDAY 
+      -50        20      -120
+
+15)
+
+> roulette_twf<-roulette_vector[c(2,3,5)]
+> roulette_twf
+  TUESDAY WEDNESDAY    FRIDAY 
+      -50       100        10
+
+16)
+
+> poker_mean<-mean(poker_vector)
+> poker_mean
+[1] 46
+> 
+> poker_mean_mtw<-mean(poker_vector[c(1,2,3)])
+> poker_mean_mtw
+[1] 36.66667
+> 
+> 
+> roulette_mean_mtw<-mean(roulette_vector[c(1,2,3)])
+> 
+> roulette_mean_mtw
+[1] 8.666667
+
+17)
+
+> profit<-poker_vector>0
+> profit
+   MONDAY   TUESDAY WEDNESDAY  THURSDAY    FRIDAY 
+     TRUE     FALSE      TRUE     FALSE      TRUE 
+
+ 
+> winning_days_poker<-poker_vector[profit]
+> winning_days_poker
+   MONDAY WEDNESDAY    FRIDAY 
+      140        20       240 
+
+ 
+> winning_days_roulette<-roulette_vector[profit]
+> winning_days_roulette
+   MONDAY WEDNESDAY    FRIDAY 
+      -24       100        10
+
+
+
+
+
+
+ 
+
+
+
